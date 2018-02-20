@@ -3,12 +3,12 @@ class Piece
 
   def initialize
     @color = color
-    @board = Board.new
+    @board = board
     @pos = []
   end
 
   def to_s
-    
+
   end
 
   def empty?
@@ -20,10 +20,14 @@ class Piece
   end
 
   def valid_moves
-
+    moves
   end
 
   def move_into_check?(end_pos)
 
+  end
+
+  def symbol
+    
   end
 end
