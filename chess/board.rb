@@ -1,6 +1,7 @@
 require_relative 'piece.rb'
 
 class Board
+  attr_reader :grid
 
   def self.default_grid
     Array.new(8) { Array.new(8) }
@@ -12,10 +13,10 @@ class Board
   end
 
   def populate
-    (0..7).each { |y| self[[0, y]] = Piece.instance }
-    (0..7).each { |y| self[[1, y]] = Piece.instance } #with actual values
-    (0..7).each { |y| self[[6, y]] = Piece.instance } #for each piece
-    (0..7).each { |y| self[[7, y]] = Piece.instance }
+    (0..7).each { |y| self[[0, y]] = Piece.new(:white, [0, y]) }
+    (0..7).each { |y| self[[1, y]] = Piece.new(:white, [1, y]) } #with actual values
+    (0..7).each { |y| self[[6, y]] = Piece.new(:black, [6, y]) } #for each piece
+    (0..7).each { |y| self[[7, y]] = Piece.new(:black, [7, y]) }
   end
 
   def [](pos)
