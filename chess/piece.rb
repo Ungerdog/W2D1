@@ -11,8 +11,8 @@ class Piece
     "P"
   end
 
-  def empty?
-
+  def empty?(pos)
+    pos.is_a?(NullPiece.instance) ? true : false
   end
 
   def pos=(value)
@@ -24,10 +24,6 @@ class Piece
   end
 
   def move_into_check?(end_pos)
-
-  end
-
-  def symbol
 
   end
 end
