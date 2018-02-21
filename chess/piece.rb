@@ -8,7 +8,7 @@ class Piece
   end
 
   def to_s
-    "P"
+  "#{symbol}""
   end
 
   def empty?(pos)
